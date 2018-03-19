@@ -1,0 +1,19 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% block styles %}{% endblock %}
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+        <footer>
+            {% if user.is_authenticated %}
+                <p>Jesteś zalogowany jako {{ user.username }}</p>
+                <p><a href="{% url 'logout' %}">Wyloguj</a></p>
+            {% else %}
+                <p><a href="{% url 'login' %}">Zaloguj</a></p>
+            {% endif %}
+        </footer>
+    </body>
+</html>

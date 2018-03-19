@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>Uczniowie z klasy {{ class_name }}:</p>
+    <ul>
+        {% for student in students %}
+            {% comment %}
+                <li>{{ student.first_name }} {{ student.last_name }}</li>
+            {% endcomment %}
+
+            {% comment %}
+                <li>{{ student.name }}</li>
+            {% endcomment %}
+
+            <li><a href="/student/{{ student.id }}">{{ student }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

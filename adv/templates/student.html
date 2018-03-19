@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>Student: {{ student }}
+        {% if student.year_of_birth %}
+            , ur. {{ student.year_of_birth }}r
+        {% endif %}
+    </p>
+    <p>Klasa: {{ class_name }}</p>
+    <ul>
+    {% for subject in subjects %}
+        <li>
+            <a href="/grades/{{ student.id }}/{{ subject.id }}">
+                {{ subject.name }}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

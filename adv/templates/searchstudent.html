@@ -1,0 +1,11 @@
+{% extends 'base_form.html' %}
+
+{% block buttontext %}Wyszukaj!{% endblock %}
+
+{% block afterform %}
+    <ul>
+    {% for student in students %}
+        <li>{{ student }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

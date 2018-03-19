@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul>
+        {% for notice in notices %}
+            <li>From: {{ notice.from_fk.teacher_name }}</li>
+            <li>To: {{ notice.to.first_name }} {{ notice.to.last_name }}</li>
+            <li>Content: {{ notice.content }}</li>
+            <li><a href="{% url 'delete-notice' pk=notice.id %}">Usuń</a></li>
+            <br>
+        {% endfor %}
+    </ul>
+    {% if perms.exercises.add_studentnotice %}
+        <a href="{% url 'create-notice' %}">Dodaj uwagę</a>
+    {% endif %}
+
+
+{% endblock %}

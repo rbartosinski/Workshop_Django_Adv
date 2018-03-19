@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>Czy aby na pewno chcesz usunąć uwagę o id {{ studentnotice.id }}?</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Usuń!">
+    </form>
+{% endblock %}

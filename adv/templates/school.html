@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Szkoła podstawowa nr 7. Szkoła sportowa</h1>
+<h2>Klasy:</h2>
+<ul>
+{% for class_id, class_name in school_classes %}
+    <li><a href='/class/{{ class_id }}'>{{ class_name }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
